@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c \":*)",
+      "Bash(npm install:*)",
+      "Read(//c/Program Files/**)",
+      "Read(//c/Users/vcost/AppData/Roaming/**)",
+      "Read(//c/Program Files \\(x86\\)/**)",
+      "Read(//c/Users/vcost/**)",
+      "Bash(cmd //c \"where node 2>nul\")",
+      "Bash(cmd //c \"node --version 2>nul && npm --version 2>nul\")",
+      "Bash(cmd //c \"where node\")",
+      "Bash(cmd //c \"node --version\")",
+      "Bash(cmd //c \"npm --version\")",
+      "Bash(ls '/c/Program Files \\(x86\\)/nodejs/node.exe')",
+      "Bash(export PATH=\"$PATH:/c/Program Files/nodejs\")",
+      "Bash(npm --version)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(cmd //c \"git --version\")",
+      "Bash(cmd //c \"gh --version\")"
+    ]
+  }
+}

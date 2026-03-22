@@ -1,0 +1,437 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f0f2f5;
+  color: #1a1a2e;
+  min-height: 100vh;
+}
+
+/* ── Header ───────────────────────────────────── */
+.app-header {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
+  color: white;
+  padding: 1.25rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.app-header h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.header-icon {
+  font-size: 1.8rem;
+}
+
+/* ── Main container ───────────────────────────── */
+.app-container {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+/* ── Toolbar ──────────────────────────────────── */
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: white;
+  border: 1.5px solid #dde3ec;
+  border-radius: 8px;
+  padding: 0.5rem 0.9rem;
+  flex: 1;
+  max-width: 380px;
+  transition: border-color 0.2s;
+}
+
+.search-box:focus-within {
+  border-color: #0f3460;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+  width: 100%;
+  background: transparent;
+}
+
+.search-icon {
+  color: #888;
+  font-size: 1rem;
+}
+
+/* ── Buttons ──────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1.1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: #0f3460;
+  color: white;
+}
+.btn-primary:hover { background: #16213e; transform: translateY(-1px); }
+
+.btn-success {
+  background: #198754;
+  color: white;
+}
+.btn-success:hover { background: #146c43; }
+
+.btn-warning {
+  background: #e67e22;
+  color: white;
+}
+.btn-warning:hover { background: #d35400; }
+
+.btn-danger {
+  background: #dc3545;
+  color: white;
+}
+.btn-danger:hover { background: #bb2d3b; }
+
+.btn-secondary {
+  background: #6c757d;
+  color: white;
+}
+.btn-secondary:hover { background: #5c636a; }
+
+.btn-sm {
+  padding: 0.35rem 0.7rem;
+  font-size: 0.8rem;
+}
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ── Card / Table ─────────────────────────────── */
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+.card-info {
+  padding: 0.75rem 1.5rem;
+  background: #f8f9ff;
+  border-bottom: 1px solid #eef0f8;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: #f8f9ff;
+}
+
+th {
+  padding: 0.9rem 1.5rem;
+  text-align: left;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #555;
+  border-bottom: 2px solid #eef0f8;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+}
+
+th:hover { color: #0f3460; }
+
+th .sort-icon { margin-left: 4px; font-size: 0.75rem; }
+
+td {
+  padding: 0.85rem 1.5rem;
+  border-bottom: 1px solid #f0f2f8;
+  font-size: 0.92rem;
+}
+
+tr:last-child td { border-bottom: none; }
+
+tbody tr:hover { background: #f8f9ff; }
+
+.td-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.td-id {
+  color: #aaa;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.td-secondary {
+  color: #555;
+  font-size: 0.88rem;
+}
+
+.td-empty {
+  color: #ccc;
+}
+
+/* ── Pagination ───────────────────────────────── */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.5rem;
+  border-top: 1px solid #eef0f8;
+  font-size: 0.85rem;
+  color: #666;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.pagination-buttons {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.page-btn {
+  padding: 0.3rem 0.65rem;
+  border: 1.5px solid #dde3ec;
+  background: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.82rem;
+  transition: all 0.15s;
+}
+
+.page-btn:hover:not(:disabled) {
+  background: #0f3460;
+  color: white;
+  border-color: #0f3460;
+}
+
+.page-btn.active {
+  background: #0f3460;
+  color: white;
+  border-color: #0f3460;
+}
+
+.page-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ── Empty / Loading states ───────────────────── */
+.state-row td {
+  text-align: center;
+  padding: 3rem;
+  color: #aaa;
+  font-size: 0.95rem;
+}
+
+.spinner {
+  display: inline-block;
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 2px solid #dde3ec;
+  border-top-color: #0f3460;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Modal ────────────────────────────────────── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+  animation: fadeIn 0.15s ease;
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.modal {
+  background: white;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 460px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+  animation: slideUp 0.2s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #eef0f8;
+}
+
+.modal-header h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: #888;
+  line-height: 1;
+  padding: 0.2rem;
+  border-radius: 4px;
+  transition: color 0.15s;
+}
+
+.modal-close:hover { color: #dc3545; }
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid #eef0f8;
+}
+
+/* ── Form ─────────────────────────────────────── */
+.form-group {
+  margin-bottom: 1.1rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 0.4rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  border: 1.5px solid #dde3ec;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  outline: none;
+  transition: border-color 0.2s;
+  font-family: inherit;
+}
+
+.form-group input:focus {
+  border-color: #0f3460;
+  box-shadow: 0 0 0 3px rgba(15,52,96,0.08);
+}
+
+.form-group input.error {
+  border-color: #dc3545;
+}
+
+.field-error {
+  color: #dc3545;
+  font-size: 0.78rem;
+  margin-top: 0.3rem;
+}
+
+/* ── Toast ────────────────────────────────────── */
+.toast-container {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 2000;
+}
+
+.toast {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1.2rem;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: white;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  animation: slideLeft 0.25s ease;
+  min-width: 220px;
+}
+
+@keyframes slideLeft {
+  from { transform: translateX(60px); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+
+.toast.success { background: #198754; }
+.toast.error   { background: #dc3545; }
+
+/* ── Confirm dialog ───────────────────────────── */
+.confirm-text {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+.confirm-text strong {
+  color: #1a1a2e;
+}
+
+/* ── Responsive ───────────────────────────────── */
+@media (max-width: 600px) {
+  .app-container { padding: 0 0.75rem; margin: 1rem auto; }
+  .toolbar { flex-direction: column; align-items: stretch; }
+  .search-box { max-width: 100%; }
+  th, td { padding: 0.7rem 0.9rem; }
+  .td-id { display: none; }
+}
