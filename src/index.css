@@ -428,10 +428,15 @@ tbody tr:hover { background: #f8f9ff; }
 }
 
 /* ── Responsive ───────────────────────────────── */
-@media (max-width: 600px) {
+@media (max-width: 640px) {
   .app-container { padding: 0 0.75rem; margin: 1rem auto; }
   .toolbar { flex-direction: column; align-items: stretch; }
   .search-box { max-width: 100%; }
-  th, td { padding: 0.7rem 0.9rem; }
+  th, td { padding: 0.7rem 0.75rem; }
   .td-id { display: none; }
+  .col-telefono, .col-email { display: none; }
+  .btn-sm { padding: 0.4rem 0.6rem; font-size: 0.78rem; }
+  .app-header h1 { font-size: 1.15rem; }
+  .modal { max-width: 100%; border-radius: 0; position: fixed; bottom: 0; left: 0; right: 0; border-radius: 16px 16px 0 0; }
+  .modal-overlay { align-items: flex-end; }
 }

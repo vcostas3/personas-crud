@@ -86,8 +86,8 @@ export default function PersonaList({ personas, loading, onEdit, onDelete }) {
               <th style={{ width: 55 }}>ID</th>
               <th onClick={() => handleSort('nombre')}>Nombre {sortIcon('nombre')}</th>
               <th onClick={() => handleSort('apellidos')}>Apellidos {sortIcon('apellidos')}</th>
-              <th onClick={() => handleSort('telefono')}>Teléfono {sortIcon('telefono')}</th>
-              <th onClick={() => handleSort('email')}>Email {sortIcon('email')}</th>
+              <th className="col-telefono" onClick={() => handleSort('telefono')}>Teléfono {sortIcon('telefono')}</th>
+              <th className="col-email" onClick={() => handleSort('email')}>Email {sortIcon('email')}</th>
               <th style={{ width: 150 }}>Acciones</th>
             </tr>
           </thead>
@@ -106,8 +106,8 @@ export default function PersonaList({ personas, loading, onEdit, onDelete }) {
                   <td className="td-id">#{p.id}</td>
                   <td>{p.nombre}</td>
                   <td>{p.apellidos}</td>
-                  <td className="td-secondary">{p.telefono || <span className="td-empty">—</span>}</td>
-                  <td className="td-secondary">{p.email || <span className="td-empty">—</span>}</td>
+                  <td className="td-secondary col-telefono">{p.telefono || <span className="td-empty">—</span>}</td>
+                  <td className="td-secondary col-email">{p.email || <span className="td-empty">—</span>}</td>
                   <td>
                     <div className="td-actions">
                       <button className="btn btn-warning btn-sm" onClick={() => onEdit(p)}>✏️ Editar</button>
